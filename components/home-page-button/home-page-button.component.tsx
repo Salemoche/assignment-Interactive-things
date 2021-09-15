@@ -16,7 +16,8 @@ const HomePageButtonComponent: FC<ButtonInterface> = ({className, iconPosition})
         <button className={`iat-button ${className}`} onClick={handleClick}>
             <div className="iat-footer__icon iat-icon" style={{
                 order: iconPosition == 'left' ? 0 : 1,
-                transform: iconPosition == 'left' ? 'none' : 'rotate(180deg)'
+                transform: iconPosition == 'left' ? 'none' : 'rotate(180deg)',
+                margin: iconPosition == 'left' ? '0 10px 0 0' : '0 0 0 10px'
                 }}>
                 <ArrowIcon/>
             </div>
