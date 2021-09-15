@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import { useEffect, FC } from 'react';
 import LayoutComponent from '../components/layout/layout.component';
+import SearchComponent from '../components/search/search.component';
 
 interface HomeInterface {
   municipalities: any
@@ -17,9 +18,10 @@ const Home: FC<HomeInterface> = ({municipalities}) => {
 
   return (
     <LayoutComponent>
-      <div className={styles.container}>
+      <main className={styles.container}>
         <h1>Hello World!</h1>
-      </div>
+        <SearchComponent/>
+      </main>
     </LayoutComponent>
   )
 }
