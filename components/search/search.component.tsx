@@ -1,41 +1,36 @@
+import router from 'next/router';
 import React, { useState } from 'react'
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 
 const SearchComponent = () => {
-
     const [municipalities, setMunicipalities] = useState([])
 
     const handleOnSearch = async (string: string, results: any) => {
-        // onSearch will have as the first callback parameter
-        // the string searched and for the second the results.
 
         const res = await fetch(`https://municipality-example-api.vercel.app/api/municipalities?name=${ string }`);
-        const data = await res.json()
-        // setMunicipalities([ ...data ])
-        setMunicipalities(data.municipalities)
+        const data = await res.json();
+        setMunicipalities(data.municipalities);
         console.log(data, municipalities);
 
-
-        console.log(string, results)
+        console.log(string, results);
     }
     
     const handleOnHover = (result: any) => {
-        // the item hovered
-        console.log(result)
+        console.log(result);
     }
     
-    const handleOnSelect = (item: any) => {
-        // the item selected
-        console.log(item)
+    const handleOnSelect = (municipality: any) => {
+        console.log(municipality);
+        router.push(`/municipality/${municipality.id}`);
     }
     
     const handleOnFocus = () => {
-        console.log('Focused')
+        console.log('Focused');
     }
     
-    const formatResult = (item: any) => {
-        return item;
-    // return (<p dangerouslySetInnerHTML={{__html: '<strong>'+item+'</strong>'}}></p>); //To format result as html
+    const formatResult = (municipality: any) => {
+        return municipality;
+    // return (<p dangerouslySetInnerHTML={{__html: '<strong>'+municipality+'</strong>'}}></p>); //To format result as html
     }
 
     return (
