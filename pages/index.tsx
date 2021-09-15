@@ -2,8 +2,19 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { useEffect, FC } from 'react';
 
-const Home: NextPage = () => {
+interface HomeInterface {
+  municipalities: any
+}
+
+const Home: FC<HomeInterface> = ({municipalities}) => {
+
+  useEffect(() => {
+      console.log('hey');
+      console.log(municipalities);
+  }, [municipalities])
+
   return (
     <div className={styles.container}>
       <Head>
