@@ -1,7 +1,7 @@
 import router from 'next/router';
 import React, { useState, useEffect } from 'react'
-// import { ReactSearchAutocomplete } from 'react-search-autocomplete';
-const ReactSearchAutocomplete = require( 'react-search-autocomplete' );
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+// const ReactSearchAutocomplete = require( 'react-search-autocomplete' );
 
 const SearchComponent = () => {
     const [municipalities, setMunicipalities] = useState([])
@@ -51,7 +51,7 @@ const SearchComponent = () => {
             <label htmlFor="search">Nach welcher Gemeinde suchen Sie?</label>
             {/* <div className="iat-search__bar__icon"></div> */}
             <div className="iat-search__bar">
-                {/* <ReactSearchAutocomplete 
+                <ReactSearchAutocomplete 
                     items={municipalities}
                     placeholder="Suche nach Gemeindename..."
                     onSearch={handleOnSearch}
@@ -63,7 +63,7 @@ const SearchComponent = () => {
                     styling={{
                         // backgroundColor: 'green',
                     }}
-                /> */}
+                />
             </div>
             {/* </form> */}
         </div>
