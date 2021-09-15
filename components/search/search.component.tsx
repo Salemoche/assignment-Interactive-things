@@ -38,7 +38,7 @@ const SearchComponent = () => {
             {/* <form onSubmit={ searchMunicipality }> */}
             <label htmlFor="search">Nach welcher Gemeinde suchen Sie?</label>
             {/* <div className="iat-search__bar__icon"></div> */}
-            <div className="iat-search__bar__bar">
+            <div className="iat-search__bar">
                 <ReactSearchAutocomplete 
                     items={municipalities}
                     placeholder="Suche nach Gemeindename..."
