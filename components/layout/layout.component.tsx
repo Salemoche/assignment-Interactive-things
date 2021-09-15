@@ -9,12 +9,12 @@ interface LayoutInterface {
 
 const LayoutComponent: FC<LayoutInterface> = ({ children }) => {
     return (
-        <>
+        <div className="iat">
             <MetaComponent/>
             <NavigationComponent/>
             { children }
             <FooterComponent/>
-        </>
+        </div>
     )
 }
 

@@ -18,7 +18,7 @@ const Home: FC<HomeInterface> = ({municipalities}) => {
 
   return (
     <LayoutComponent>
-      <main className={styles.container}>
+      <main className={styles['iat-home']}>
         <h1>Hello World!</h1>
         <SearchComponent/>
       </main>
