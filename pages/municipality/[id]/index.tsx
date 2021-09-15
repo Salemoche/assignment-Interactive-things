@@ -23,7 +23,7 @@ const MunicipalityComponent: FC<MunicipalityInterface> = ({ municipality }) => {
 
 export default MunicipalityComponent
 
-export const getServerSideProps = async( context ) => {
+export const getServerSideProps = async( context: any ) => {
     const res = await fetch(`https://municipality-example-api.vercel.app/api/municipality?id=${ context.params.id }`);
     const municipality = await res.json()
 
