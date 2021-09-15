@@ -1,11 +1,12 @@
 import router from 'next/router'
 import React, { FC } from 'react'
-
+import ArrowIcon from '../../assets/icons/arrow.svg';
 interface ButtonInterface {
+    iconPosition: string
     className: string
 }
 
-const HomePageButtonComponent: FC<ButtonInterface> = ({className}) => {
+const HomePageButtonComponent: FC<ButtonInterface> = ({className, iconPosition}) => {
 
     const handleClick = () => {
         router.push("/");
@@ -13,7 +14,13 @@ const HomePageButtonComponent: FC<ButtonInterface> = ({className}) => {
 
     return (
         <button className={`iat-button ${className}`} onClick={handleClick}>
-            Zurück zur Startseite
+            <div className="iat-footer__icon iat-icon" style={{
+                order: iconPosition == 'left' ? 0 : 1,
+                transform: iconPosition == 'left' ? 'none' : 'rotate(180deg)'
+                }}>
+                <ArrowIcon/>
+            </div>
+            <span>Zurück zur Startseite</span>
         </button>
     )
 }

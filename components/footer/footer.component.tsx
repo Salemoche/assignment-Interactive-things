@@ -8,7 +8,9 @@ const FooterComponent = () => {
                 <div className="iat-footer__icon iat-icon">
                     <IATLogo/>
                 </div>
-                <div className="iat-footer__text">Interactive Things</div>
+                <a href="https://www.interactivethings.com/" target="_blank">
+                    <div className="iat-footer__text">Interactive Things</div>
+                </a>
             </div>
         </footer>
     )

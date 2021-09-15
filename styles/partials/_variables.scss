@@ -12,6 +12,7 @@
 *========================*/
 
 $color_monochrome_900: #000000;
+$color_monochrome_100: #F9F9F9;
 
 $color_blue_900: #00263E;
 $color_blue_500: #3F7397;
@@ -46,3 +47,9 @@ $font_s: 16px; // 1.5
 *	Breakpoints
 *========================*/
 $breakpoint_medium: 768px;
+
+
+/**========================
+*	Other
+*========================*/
+$transition: .3s;

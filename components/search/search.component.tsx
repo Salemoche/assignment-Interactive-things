@@ -1,9 +1,19 @@
 import router from 'next/router';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 
 const SearchComponent = () => {
     const [municipalities, setMunicipalities] = useState([])
+
+    useEffect(() => {
+        initialFetch();
+    }, [])
+
+    const initialFetch = async () => {
+        const res = await fetch(`https://municipality-example-api.vercel.app/api/municipalities?name=e`);
+        const data = await res.json();
+        setMunicipalities(data.municipalities);
+    }
 
     const handleOnSearch = async (string: string, results: any) => {
 
@@ -22,6 +32,7 @@ const SearchComponent = () => {
     const handleOnSelect = (municipality: any) => {
         console.log(municipality);
         router.push(`/municipality/${municipality.id}`);
+        
     }
     
     const handleOnFocus = () => {

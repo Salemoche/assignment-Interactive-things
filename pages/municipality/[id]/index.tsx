@@ -1,6 +1,7 @@
 import React, { useEffect, FC } from 'react'
 import {useRouter} from 'next/router'
 import HomePageButtonComponent from '../../../components/home-page-button/home-page-button.component';
+import LayoutComponent from '../../../components/layout/layout.component';
 
 interface MunicipalityInterface {
     municipality: any
@@ -11,10 +12,12 @@ const MunicipalityComponent: FC<MunicipalityInterface> = ({ municipality }) => {
     const { id } = router.query
 
     return (
-        <main className="iat-municipality">
-            <HomePageButtonComponent className="iat-municipality__home-button"/>
-            <h1>This is the Municipality Page with ID {id} and name { municipality.name } </h1>
-        </main>
+        <LayoutComponent>
+            <main className="iat-municipality">
+                <HomePageButtonComponent className="iat-municipality__home-button" iconPosition="left"/>
+                <h1>{ municipality.name } </h1>
+            </main>
+        </LayoutComponent>
     )
 }
 
